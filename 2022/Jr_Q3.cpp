@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <string>
-using namespace std;
+using namespace std;    
 
 int main(void)
 {
@@ -14,14 +14,19 @@ int main(void)
         {
             if(code[i]=='+') cout<<" tighten ";
             else cout<<" loosen ";
-            while(code[i]>57||code[i]=='\0')
+            i++;
+            while(1)
             {
-                i++;
+                if(code[i]>57||code[i]=='\0') break;
                 cout<<code[i];
+                i++;
             }
             cout<<endl;
+            i--;
         }
-        else cout<<code[i];
+        else
+            cout <<code[i];
+        //cout<<endl<<"value of i: "<<i<<endl;
     }
     return 0;
 }
